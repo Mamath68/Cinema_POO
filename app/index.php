@@ -1,22 +1,47 @@
-<!DOCTYPE html>
-<html lang="fr">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Cinema_POO</title>
-</head>
+// je demande le fichier physique ou j'utilise un autoloader 
 
-<body>
-    <?php
+require_once "controller/FilmController.php";
+require_once "controller/ActeurController.php";
+require_once "controller/AccueilController.php";
+require_once "controller/RealisateurController.php";
+require_once "controller/GenreController.php";
 
-    spl_autoload_register(function ($class_name) {
-        include $class_name . '.php';
-    });
+// j'instancie les controlleurs 
+$ctrlFilm = new FilmController();
+$ctrlAccueil = new AccueilController();
+$ctrlActeur = new ActeurController();
+$ctrlRealisateur = new RealisateurController();
+$ctrlGenres = new GenreController();
 
-    ?>
-</body>
+// je switch entre difféents case 
+// si j'ai une "action "dans l'URL , cette action donnera accès à un controlleur et à la fonction demandée (si elle existe) 
+if (isset($_GET['action'])) {
+    $id = filter_input(INPUT_GET, "id", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-</html>
+    // car possible d'injecter du code malveillant dans l'URL 
+    switch ($_GET['action']) {
+        case "listFilms":
+            $ctrlFilm->findAll();
+            break;
+        // case "detailFilm":
+        //     $ctrlFilm->findOneById($id);
+        //     break;
+        case "listActeurs":
+            $ctrlActeur->findAll();
+            break;
+        case "listRealisateurs":
+            $ctrlRealisateur->findAll();
+            break;
+        case "listGenres":
+            $ctrlGenres->findAll();
+            break;
+        default:
+            $ctrlAccueil->pageAccueil();
+            break;
+    }
+} else {
+    $ctrlAccueil->pageAccueil();
+    // ma page par défault si l'action demandée n'est pas trouvée 
+}

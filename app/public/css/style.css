@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    padding: 1.5em;
+}
+
+ul li {
+    list-style: none;
+}
+
+thead,
+tbody,
+td,
+th {
+    border-width: 1px;
+    width: 20%;
+}
+
+table {
+    table-layout: sticky;
+    margin-top: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+ol,
+ul {
+    margin-bottom: 0rem;
+}
+
+h1 {
+    text-align: center;
+}
