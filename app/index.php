@@ -7,6 +7,7 @@ require_once "controller/ActeurController.php";
 require_once "controller/AccueilController.php";
 require_once "controller/RealisateurController.php";
 require_once "controller/GenreController.php";
+require_once "controller/RoleController.php";
 
 // j'instancie les controlleurs 
 $ctrlFilm = new FilmController();
@@ -14,6 +15,7 @@ $ctrlAccueil = new AccueilController();
 $ctrlActeur = new ActeurController();
 $ctrlRealisateur = new RealisateurController();
 $ctrlGenres = new GenreController();
+$ctrlRoles = new RoleController();
 
 // je switch entre difféents case 
 // si j'ai une "action "dans l'URL , cette action donnera accès à un controlleur et à la fonction demandée (si elle existe) 
@@ -36,6 +38,9 @@ if (isset($_GET['action'])) {
             break;
         case "listGenres":
             $ctrlGenres->findAll();
+            break;
+        case "listRoles":
+            $ctrlRoles->findAll();
             break;
         default:
             $ctrlAccueil->pageAccueil();

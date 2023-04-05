@@ -11,7 +11,7 @@ while ($realisateur = $realisateurs->fetch()) {
   <thead>
     <tr>
       <th scope="col">ID</th>
-      <th colspan="2">Nom Prenom</th>
+      <th colspan="2">Prenom Nom</th>
       <th scope="col">Date de naissance</th>
       <th scope="col">Nationalité</th>
     </tr>
