@@ -1,7 +1,7 @@
 <?php ob_start()
   ?>
 
-<h1>Bienvenu sur ma page de Film</h1>
+<h1>Bienvenue sur ma page des realisateurs</h1>
 
 <?php
 
@@ -18,7 +18,7 @@ while ($realisateur = $realisateurs->fetch()) {
   </thead>
   <tbody>
     <tr>
-      <th scope="row">' . $realisateur['id_realisateur'] . '</th>
+      <th>' . $realisateur['id_realisateur'] . '</th>
       <td colspan="2">' . $realisateur['nom_realisateur'] . '</td>
       <td>' . $realisateur['date_naissance'] . '</td>
       <td>' . $realisateur['nationalite'] . '</td>

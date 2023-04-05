@@ -18,7 +18,7 @@ while ($acteur = $acteurs->fetch()) {
     </thead>
     <tbody>
       <tr>
-        <th scope="row">' . $acteur['id_acteur'] . '</th>
+        <th>' . $acteur['id_acteur'] . '</th>
         <td colspan="2">' . $acteur['nom_acteur'] . '</td>
         <td>' . $acteur['date_naissance'] . '</td>
         <td>' . $acteur['nationalite'] . '</td>

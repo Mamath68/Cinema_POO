@@ -16,7 +16,7 @@ while ($genre = $genres->fetch()) {
     </thead>
     <tbody>
       <tr>
-        <th scope="row">' . $genre['id_genre'] . '</th>
+        <th>' . $genre['id_genre'] . '</th>
         <td>' . $genre['libelle'] . '</td>
       </tr>
     </tbody>

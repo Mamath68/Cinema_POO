@@ -15,12 +15,16 @@ ul li {
     list-style: none;
 }
 
+main {
+    min-height: 81vh;
+}
+
 thead,
 tbody,
 td,
 th {
     border-width: 1px;
-    width: 20%;
+    width: 16%;
 }
 
 table {
@@ -38,6 +42,10 @@ a:hover {
     color: white;
 }
 
+img {
+    width: 237PX;
+    height: 280PX;
+}
 ol,
 ul {
     margin-bottom: 0rem;

@@ -1,6 +1,6 @@
 <?php ob_start()
     ?>
-<h1>Bienvenu sur ma page d'Accueil</h1>
+<h1>Bienvenue sur ma page d'Accueil</h1>
 
 
 <?php

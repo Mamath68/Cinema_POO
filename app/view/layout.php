@@ -32,9 +32,9 @@
     <footer>
         <nav>
             <ul class="ul">
-                <li class="list"><a class="href" href="#">Facebook</a></li>
-                <li class="list"><a class="href" href="#">Twitter</a></li>
-                <li class="list"><a class="href" href="#">Instagram</a></li>
+                <li class="list"><a class="href" href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+                <li class="list"><a class="href" href="https://twitter.com/?lang=fr" target="_blank">Twitter</a></li>
+                <li class="list"><a class="href" href="https://www.instagram.com/" target="_blank">Instagram</a></li>
             </ul>
         </nav>
     </footer>
