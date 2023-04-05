@@ -5,25 +5,24 @@
 
 <?php
 
+echo '<table class="table">
+<thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th>Prenom</th>
+    <th>Nom</th>
+  </tr>
+</thead>';
 while ($role = $roles->fetch()) {
-
-  echo '<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th>Prenom</th>
-      <th>Nom</th>
-    </tr>
-  </thead>
-  <tbody>
+  echo '<tbody>
     <tr>
       <th>' . $role['id_role'] . '</th>
       <td>' . $role['prenom'] . '</td>
       <td>' . $role['nom'] . '</td>
-    </tr>
-  </tbody>
-</table>';
+    </tr>';
 }
+echo '</tbody>
+</table>';
 ?>
 
 <?php

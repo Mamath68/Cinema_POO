@@ -27,9 +27,9 @@ if (isset($_GET['action'])) {
         case "listFilms":
             $ctrlFilm->findAll();
             break;
-        // case "detailFilm":
-        //     $ctrlFilm->findOneById($id);
-        //     break;
+        case "detailFilm":
+            $ctrlFilm->findOneById($id);
+            break;
         case "listActeurs":
             $ctrlActeur->findAll();
             break;

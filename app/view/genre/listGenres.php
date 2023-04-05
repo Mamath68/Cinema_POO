@@ -1,27 +1,26 @@
 <?php ob_start()
-    ?>
+  ?>
 
 <h1>Bienvenu sur ma page des Genres</h1>
 
 <?php
 
+echo '<table class="table">
+<thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Libellé</th>
+  </tr>
+</thead>';
 while ($genre = $genres->fetch()) {
-
-    echo '<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Libellé</th>
-      </tr>
-    </thead>
-    <tbody>
+  echo '<tbody>
       <tr>
         <th>' . $genre['id_genre'] . '</th>
         <td>' . $genre['libelle'] . '</td>
-      </tr>
-    </tbody>
-  </table>';
+      </tr>';
 }
+echo '</tbody>
+  </table>';
 ?>
 
 <?php
