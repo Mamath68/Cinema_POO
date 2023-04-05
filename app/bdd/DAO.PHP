@@ -22,3 +22,5 @@
 }
 
 //faire définition de DAO et PDO
+// PDO: PHP Data Object
+// DAO : Data Access Object
