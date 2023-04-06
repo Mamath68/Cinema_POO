@@ -8,15 +8,15 @@
 echo '<table class="table">
 <thead>
   <tr>
-    <th scope="col">ID</th>
     <th scope="col">Libellé</th>
+    <th scope="col">Detail</th>
   </tr>
 </thead>';
 while ($genre = $genres->fetch()) {
   echo '<tbody>
       <tr>
-        <th>' . $genre['id_genre'] . '</th>
         <td>' . $genre['libelle'] . '</td>
+        <td><a href ="index.php?action=detailGenre&id=' . $genre['id_genre'] . '">Details</a></td>
       </tr>';
 }
 echo '</tbody>

@@ -14,4 +14,17 @@ class GenreController
         $genres = $dao->executerRequete($sql);
         require "view/genre/listGenres.php";
     }
+    
+    public function findOneById($id)
+    {
+        $dao = new DAO();
+
+        $sql = "SELECT g.id_genre,g.libelle
+        FROM genre g
+        Where g.id_genre = :id";
+
+        $genre = $dao->executerRequete($sql, ['id' => $id]);
+
+        require "view/genre/detailGenre.php";
+    }
 }

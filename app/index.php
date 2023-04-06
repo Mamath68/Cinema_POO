@@ -2,20 +2,20 @@
 
 // je demande le fichier physique ou j'utilise un autoloader 
 
+require_once "controller/AccueilController.php";
 require_once "controller/FilmController.php";
 require_once "controller/ActeurController.php";
-require_once "controller/AccueilController.php";
 require_once "controller/RealisateurController.php";
-require_once "controller/GenreController.php";
 require_once "controller/RoleController.php";
+require_once "controller/GenreController.php";
 
 // j'instancie les controlleurs 
-$ctrlFilm = new FilmController();
 $ctrlAccueil = new AccueilController();
+$ctrlFilm = new FilmController();
 $ctrlActeur = new ActeurController();
 $ctrlRealisateur = new RealisateurController();
-$ctrlGenres = new GenreController();
 $ctrlRoles = new RoleController();
+$ctrlGenres = new GenreController();
 
 // je switch entre difféents case 
 // si j'ai une "action "dans l'URL , cette action donnera accès à un controlleur et à la fonction demandée (si elle existe) 
@@ -33,14 +33,26 @@ if (isset($_GET['action'])) {
         case "listActeurs":
             $ctrlActeur->findAll();
             break;
+        case "detailActeur":
+            $ctrlActeur->findOneById($id);
+            break;
         case "listRealisateurs":
             $ctrlRealisateur->findAll();
+            break;
+        case "detailRealisateur":
+            $ctrlRealisateur->findOneById($id);
+            break;
+        case "listRoles":
+            $ctrlRoles->findAll();
+            break;
+        case "detailRole":
+            $ctrlRoles->findOneById($id);
             break;
         case "listGenres":
             $ctrlGenres->findAll();
             break;
-        case "listRoles":
-            $ctrlRoles->findAll();
+        case "detailGenre":
+            $ctrlGenres->findOneById($id);
             break;
         default:
             $ctrlAccueil->pageAccueil();

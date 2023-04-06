@@ -4,7 +4,7 @@
 <h1>Bienvenue sur ma page de Film</h1>
 
 <?php
-  echo '<table class="table">
+echo '<table class="table">
     <thead>
       <tr>
       <th scope="col">Titre</th>
@@ -19,9 +19,8 @@ while ($film = $films->fetch()) {
       <td><img src="' . $film['img'] . '" class="img-fluid"></td>
       <td><a href ="index.php?action=detailFilm&id=' . $film['id_film'] . '">Details</a></td>
       </tr>';
-      
-    }
-    echo ' </tbody>
+}
+echo ' </tbody>
       </table>';
 ?>
 

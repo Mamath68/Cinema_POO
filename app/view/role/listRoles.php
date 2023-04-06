@@ -1,5 +1,5 @@
 <?php ob_start()
-  ?>
+?>
 
 <h1>Bienvenue sur ma page des Rôles</h1>
 
@@ -8,17 +8,17 @@
 echo '<table class="table">
 <thead>
   <tr>
-    <th scope="col">ID</th>
     <th>Prenom</th>
     <th>Nom</th>
+    <th scope="col">Details</th>
   </tr>
 </thead>';
 while ($role = $roles->fetch()) {
   echo '<tbody>
     <tr>
-      <th>' . $role['id_role'] . '</th>
       <td>' . $role['prenom'] . '</td>
       <td>' . $role['nom'] . '</td>
+      <td><a href ="index.php?action=detailRole&id=' . $role['id_role'] . '">Details</a></td>
     </tr>';
 }
 echo '</tbody>

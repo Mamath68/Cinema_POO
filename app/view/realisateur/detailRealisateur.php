@@ -1,17 +1,15 @@
 <?php ob_start();
-$film = $film->fetch();
+$realisateur = $realisateur->fetch();
 ?>
-<?php echo '<h1>' . $film['titre'] . '</h1>' ?>
+<?php echo '<h1>' . $realisateur['nom_realisateur'] . '</h1>' ?>
 
 <?php
 
 echo '<div class="container text-center">
 <div class="row">
-  <div class="col"><img src="' . $film['img'] . '" class="img-fluid"></div>
   <div class="col">
-    <div>' . $film['date_sortie'] . ' / ' .$film['duree_du_film'] . '</div>
-    <div>hola</div>
-    <div>como estas</div>
+    <div>' . $realisateur['date_naissance'] . '</div>
+    <div>' . $realisateur['nationalite'] . '</div>
   </div>
 </div>
 <div class="row">
@@ -20,7 +18,7 @@ echo '<div class="container text-center">
       <div>
         <h2>Synopsis</h2>
       </div>
-      <div>' . $film['synopsis'] . '</div>
+      <div>list des films du realisateur</div>
     </section>
   </div>
 </div>
@@ -28,7 +26,7 @@ echo '<div class="container text-center">
 ?>
 
 <?php
-$title = $film['titre'];
+$title = $realisateur['nom_realisateur'];
 $contenu = ob_get_clean(); //temporisation de sortie
 
 require("view/layout.php");
