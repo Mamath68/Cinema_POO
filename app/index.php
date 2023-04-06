@@ -6,7 +6,6 @@ require_once "controller/AccueilController.php";
 require_once "controller/FilmController.php";
 require_once "controller/ActeurController.php";
 require_once "controller/RealisateurController.php";
-require_once "controller/RoleController.php";
 require_once "controller/GenreController.php";
 
 // j'instancie les controlleurs 
@@ -14,7 +13,6 @@ $ctrlAccueil = new AccueilController();
 $ctrlFilm = new FilmController();
 $ctrlActeur = new ActeurController();
 $ctrlRealisateur = new RealisateurController();
-$ctrlRoles = new RoleController();
 $ctrlGenres = new GenreController();
 
 // je switch entre difféents case 
@@ -41,12 +39,6 @@ if (isset($_GET['action'])) {
             break;
         case "detailRealisateur":
             $ctrlRealisateur->findOneById($id);
-            break;
-        case "listRoles":
-            $ctrlRoles->findAll();
-            break;
-        case "detailRole":
-            $ctrlRoles->findOneById($id);
             break;
         case "listGenres":
             $ctrlGenres->findAll();

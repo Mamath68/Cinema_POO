@@ -18,10 +18,9 @@
         <nav>
             <ul class="ul">
                 <li class="list"><a class="href" href="index.php">Accueil</a></li>
-                <li class="list"><a class="href" href="index.php?action=listFilms">Filmes</a></li>
+                <li class="list"><a class="href" href="index.php?action=listFilms">Films</a></li>
                 <li class="list"><a class="href" href="index.php?action=listActeurs">Acteurs</a></li>
                 <li class="list"><a class="href" href="index.php?action=listRealisateurs">Réalisateurs</a></li>
-                <li class="list"><a class="href" href="index.php?action=listRoles">Rôles</a></li>
                 <li class="list"><a class="href" href="index.php?action=listGenres">Genres</a></li>
             </ul>
             <!-- <button class="btn btn-primary" type="submit"><a class="href" href="#">ADD</a></button> -->

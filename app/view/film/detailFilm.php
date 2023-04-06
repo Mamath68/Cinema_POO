@@ -5,15 +5,21 @@ $film = $film->fetch();
 
 <?php
 
-echo '<div class="container text-center">
-<div class="row">
-  <div class="col"><img src="' . $film['img'] . '" class="img-fluid"></div>
-  <div class="col">
-    <div>' . $film['date_sortie'] . ' / ' .$film['duree_du_film'] . '</div>
-    <div>hola</div>
-    <div>como estas</div>
+echo
+  '<div class="container text-center">
+  <div class="row">
+    <div class="col"><img src="' . $film['img'] . '" class="img-fluid"></div>
+    <div class="col">
+    <div>' . "Sortis le : " . $film['date_sortie'] . ' / ' . " Durée : " . $film['duree_du_film'] . '</div>
+    <div>' . "De : " . $film['nom_realisateur'] . '</div>';
+foreach ($casting as $casting) {
+  echo '<div>' . "Avec : " . $casting['nom_acteur'] . '; ' . 'Dans le Role de ' . $casting['nom_role'] . '</div>';
+}
+foreach ($genre as $genre) {
+  echo '<div>' . "Genre : " . $genre['libelle'] . '</div>';
+}
+echo '</div>
   </div>
-</div>
 <div class="row">
   <div class="col">
     <section>

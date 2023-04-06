@@ -5,21 +5,26 @@ $acteur = $acteur->fetch();
 
 <?php
 
-echo '<div class="container text-center">
-<div class="row">
-  <div class="col">
-    <div>' . $acteur['date_naissance'] . '</div>
-    <div>' . $acteur['nationalite'] . '</div>
+echo
+'<div class="container text-center">
+  <div class="row">
+    <div class="col"><img src="' . $acteur['img'] . '" class="img-fluid"></div>
+    <div class="col">
+    <div>' . 'Date de naissance : ' . ' ' . $acteur['date_naissance'] . '</div>
+    <div>' . 'Nationalité : ' . '' . $acteur['nationalite'] . '</div>
   </div>
 </div>
 <div class="row">
   <div class="col">
-    <section>
-      <div>
-        <h2>Synopsis</h2>
-      </div>
-      <div> liste des films des acteur </div>
-    </section>
+    <section>';
+    foreach ($casting as $casting) {
+      echo '<div>' .'Rôle :'.' ' .$casting['nom_role'] . '</div>';
+    }
+    foreach ($film as $film) {
+      echo '<div>' . "Nom du Film : " . $film['titre'] . '</div>';
+    }
+    echo 
+    '</section>
   </div>
 </div>
 </div>';
