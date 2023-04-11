@@ -25,7 +25,7 @@ class ActeurController
         FROM acteur a
         Where a.id_acteur = :id";
 
-        $sql2 = "SELECT CONCAT(ro.prenom,' ',ro.nom) AS nom_role
+        $sql2 = "SELECT f.id_film, CONCAT(ro.prenom,' ',ro.nom) AS nom_role
         FROM casting c
         INNER JOIN film f
         ON f.id_film = c.id_film
@@ -35,7 +35,7 @@ class ActeurController
         ON ro.id_role = c.id_role
         Where a.id_acteur = :id";
 
-        $sql3 = "SELECT f.titre
+        $sql3 = "SELECT f.id_film,f.titre
         FROM film f
         inner join casting c
         ON f.id_film = c.id_film

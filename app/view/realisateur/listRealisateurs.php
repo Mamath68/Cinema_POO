@@ -8,25 +8,25 @@
 echo '<table class="table">
 <thead>
   <tr>
-    <th colspan="2">Prenom Nom</th>
-    <th scope="col">Date de naissance</th>
-    <th scope="col">Nationalité</th>
-    <th scope="col">Details</th>
+    <th colspan="2" style="background-color:bisque;">Prenom Nom</th>
+    <th scope="col">Images</th>
+    <th scope="col" style="background-color:bisque;">Details</th>
   </tr>
 </thead>';
 while ($realisateur = $realisateurs->fetch()) {
   echo '<tbody>
     <tr>
       <td colspan="2">' . $realisateur['nom_realisateur'] . '</td>
-      <td>' . $realisateur['date_naissance'] . '</td>
-      <td>' . $realisateur['nationalite'] . '</td>
+      <td><img src="' . $realisateur['img'] . '" class="img-fluid"></td>
       <td><a href ="index.php?action=detailRealisateur&id=' . $realisateur['id_realisateur'] . '">Details</a></td>
     </tr>';
 }
 echo '</tbody>
 </table>';
 ?>
-
+ <a href="#" class="go_top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
 <?php
 
 $title = "Liste Des Réalisateur";

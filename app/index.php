@@ -46,6 +46,12 @@ if (isset($_GET['action'])) {
         case "detailGenre":
             $ctrlGenres->findOneById($id);
             break;
+        case "ajouterFilm":
+            $ctrlFilm->addInput();
+            break;
+        case "supprimerFilm":
+            $ctrlFilm->delFilm($id);
+            break;
         default:
             $ctrlAccueil->pageAccueil();
             break;

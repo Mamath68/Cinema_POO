@@ -5,19 +5,28 @@ $genre = $genre->fetch();
 
 <?php
 
-echo '
-<div class="container text-center">
+echo
+  '<div class="container text-center">
   <div class="row">
     <div class="col">
-      <div>list film</div>
-      <div>du genre</div>
-    </div>
+    <div>' . 'Genre : ' . '' . $genre['libelle'] . '</div>
   </div>
+</div>
+<div class="row">
+  <div class="col">
+    <section>
+    <div><h2>Liste du/des Films</h2></div>';
+foreach ($film as $film) {
+  echo '<div><a href ="index.php?action=detailFilm&id=' . $film['id_film'] . '">' . $film['titre'] . '</a></div>';
+}
+echo
+  '</section>
+  </div>
+</div>
 </div>';
 ?>
-
 <?php
-$genre = $genre['libelle'];
+$title = $genre['libelle'];
 $contenu = ob_get_clean(); //temporisation de sortie
 
 require("view/layout.php");

@@ -22,7 +22,9 @@ while ($genre = $genres->fetch()) {
 echo '</tbody>
   </table>';
 ?>
-
+ <a href="#" class="go_top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
 <?php
 $title = "Liste Des Genres";
 $contenu = ob_get_clean(); //temporisation de sortie

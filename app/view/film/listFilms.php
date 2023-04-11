@@ -10,6 +10,7 @@ echo '<table class="table">
       <th scope="col">Titre</th>
       <th scope="col">Affiche</th>
       <th scope="col">Details</th>
+      <th scope="col">Supprimer</th>
       </tr>
     </thead>';
 while ($film = $films->fetch()) {
@@ -18,12 +19,15 @@ while ($film = $films->fetch()) {
       <td>' . $film['titre'] . '</td>
       <td><img src="' . $film['img'] . '" class="img-fluid"></td>
       <td><a href ="index.php?action=detailFilm&id=' . $film['id_film'] . '">Details</a></td>
+      <td><a href ="index.php?action=supprimerFilm&id=' . $film['id_film'] . '">supr</a></td>
       </tr>';
 }
 echo ' </tbody>
       </table>';
 ?>
-
+<a href="#" class="go_top">
+  <i class="fa-solid fa-arrow-up"></i>
+</a>
 <?php
 
 $title = "Liste Des Films";

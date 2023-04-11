@@ -11,12 +11,12 @@ echo
     <div class="col"><img src="' . $film['img'] . '" class="img-fluid"></div>
     <div class="col">
     <div>' . "Sortis le : " . $film['date_sortie'] . ' / ' . " Durée : " . $film['duree_du_film'] . '</div>
-    <div>' . "De : " . $film['nom_realisateur'] . '</div>';
+    <div>' . 'De : <a href ="index.php?action=detailRealisateur&id=' . $film['id_realisateur'] . '">' . $film['nom_realisateur'] . '</a>' . '</div>';
 foreach ($casting as $casting) {
-  echo '<div>' . "Avec : " . $casting['nom_acteur'] . '; ' . 'Dans le Role de ' . $casting['nom_role'] . '</div>';
+  echo '<div>' . 'Avec : <a href ="index.php?action=detailActeur&id=' . $casting['id_acteur'] . '">' . $casting['nom_acteur'] . '</a>' . '; ' . 'Dans le Role de ' . $casting['nom_role'] . '</div>';
 }
 foreach ($genre as $genre) {
-  echo '<div>' . "Genre : " . $genre['libelle'] . '</div>';
+  echo '<div><a href ="index.php?action=detailGenre&id=' . $genre['id_genre'] . '">' . $genre['libelle'] . '</a></div>';
 }
 echo '</div>
   </div>

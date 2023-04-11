@@ -21,7 +21,7 @@ echo
       echo '<div>' .'Rôle :'.' ' .$casting['nom_role'] . '</div>';
     }
     foreach ($film as $film) {
-      echo '<div>' . "Nom du Film : " . $film['titre'] . '</div>';
+      echo '<div>' . 'Dans le Film : <a href ="index.php?action=detailFilm&id=' . $film['id_film'] . '">' . $film['titre'] . '</a></div>';
     }
     echo 
     '</section>
