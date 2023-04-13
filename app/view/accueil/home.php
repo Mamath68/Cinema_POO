@@ -28,8 +28,15 @@
         <input type="text" name="synopsis" id="synopsis" class="form-control">
     </div>
     <div class="col-md-12">
-        <label for="id_realisateur" class="form-label">ID du Realisateur</label>
-        <input type="number" name="id_realisateur" id="id_realisateur" class="form-control">
+        <label for="id_realisateur" class="form-label">Réalisateur</label>
+        <select name="id_realisateur">
+            <option value="">Realisateurs</option>
+            <?php foreach ($realisateurs as $realisateur) { ?>
+                <option value="<?= $realisateur['id_realisateur'] ?> "><?= $realisateur['prenom'] ?> <?= $realisateur['nom'] ?>
+                </option>;
+            <?php }
+            ?>
+        </select>
     </div>
     <div class="col-1">
         <input type="submit" name="submit" value="ADD" class="btn btn-primary">

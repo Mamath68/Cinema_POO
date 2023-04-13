@@ -19,7 +19,7 @@ while ($film = $films->fetch()) {
       <td>' . $film['titre'] . '</td>
       <td><img src="' . $film['img'] . '" class="img-fluid"></td>
       <td><a href ="index.php?action=detailFilm&id=' . $film['id_film'] . '">Details</a></td>
-      <td><a href ="index.php?action=supprimerFilm&id=' . $film['id_film'] . '">supr</a></td>
+      <td><a href ="index.php?action=supprimerFilm&id=' . $film['id_film'] . '">Supprimer</a></td>
       </tr>';
 }
 echo ' </tbody>

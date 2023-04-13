@@ -11,7 +11,8 @@ echo
     <div class="col"><img src="' . $film['img'] . '" class="img-fluid"></div>
     <div class="col">
     <div>' . "Sortis le : " . $film['date_sortie'] . ' / ' . " Durée : " . $film['duree_du_film'] . '</div>
-    <div>' . 'De : <a href ="index.php?action=detailRealisateur&id=' . $film['id_realisateur'] . '">' . $film['nom_realisateur'] . '</a>' . '</div>';
+    <div>' . 'De : <a href ="index.php?action=detailRealisateur&id=' . $film['id_realisateur'] . '">' . $film['nom_realisateur'] . '</a>' . '</div>
+    <div>' . "Note : " . $film['note'] . '/5 ';
 foreach ($casting as $casting) {
   echo '<div>' . 'Avec : <a href ="index.php?action=detailActeur&id=' . $casting['id_acteur'] . '">' . $casting['nom_acteur'] . '</a>' . '; ' . 'Dans le Role de ' . $casting['nom_role'] . '</div>';
 }

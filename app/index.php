@@ -49,6 +49,9 @@ if (isset($_GET['action'])) {
         case "ajouterFilm":
             $ctrlFilm->addInput();
             break;
+        case "ajouterreal":
+            $ctrlFilm->addReal();
+            break;
         case "supprimerFilm":
             $ctrlFilm->delFilm($id);
             break;

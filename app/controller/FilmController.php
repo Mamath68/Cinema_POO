@@ -17,7 +17,7 @@ class FilmController
     {
         $dao = new DAO();
 
-        $sql = "SELECT f.id_film, f.titre, f.img ,DATE_FORMAT(f.date_sortie, '%d/%m/%Y') AS date_sortie, TIME_FORMAT(SEC_TO_TIME(f.duree*60),'%Hh%i') AS duree_du_film, f.synopsis,re.id_realisateur, CONCAT(re.prenom,' ',re.nom) as nom_realisateur
+        $sql = "SELECT f.id_film, f.titre, f.img ,DATE_FORMAT(f.date_sortie, '%d/%m/%Y') AS date_sortie, TIME_FORMAT(SEC_TO_TIME(f.duree*60),'%Hh%i') AS duree_du_film, f.synopsis, f.note, re.id_realisateur, CONCAT(re.prenom,' ',re.nom) as nom_realisateur
         FROM film f
         INNER JOIN realisateur re
         ON re.id_realisateur = f.id_realisateur
@@ -83,12 +83,27 @@ class FilmController
             echo "Pikachu";
         }
     }
+    public function addReal()
+    {
+        $dao = new DAO();
+
+        $sql = "SELECT r.id_realisateur, r.prenom, r.nom
+        from realisateur r";
+        $realisateurs = $dao->executerRequete($sql);
+
+        require "view/accueil/home.php";
+    }
     public function delFilm($id)
     {
         $dao = new DAO();
 
-        $sql = "DELETE FROM film WHERE id_film = :id";
+        $sql = "DELETE FROM film f WHERE f.id_film = :id";
+        $sql2 = "DELETE FROM casting c WHERE c.id_film = :id";
+        $sql3 = "DELETE FROM lien_genre_film lgf WHERE lgf.id_film = :id";
+
         $params = ['id' => $id];
+        $casting = $dao->executerRequete($sql2, $params);
+        $lgf = $dao->executerRequete($sql3, $params);
         $films = $dao->executerRequete($sql, $params);
         header('Location:index.php?action=listFilms');
     }

@@ -8,9 +8,9 @@
 echo '<table class="table">
 <thead>
   <tr>
-    <th colspan="2" style="background-color:bisque;">Prenom Nom</th>
+    <th colspan="2">Prenom Nom</th>
     <th scope="col">Images</th>
-    <th scope="col" style="background-color:bisque;">Details</th>
+    <th scope="col">Details</th>
   </tr>
 </thead>';
 while ($realisateur = $realisateurs->fetch()) {
