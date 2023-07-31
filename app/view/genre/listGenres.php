@@ -1,30 +1,33 @@
 <?php ob_start()
   ?>
 
-<h1>Bienvenu sur ma page des Genres</h1>
+<h1>Bienvenue sur ma page des Genres</h1>
 
-<?php
-
-echo '<table class="table">
-<thead>
-  <tr>
-    <th scope="col">Libellé</th>
-    <th scope="col">Detail</th>
-  </tr>
-</thead>';
-while ($genre = $genres->fetch()) {
-  echo '<tbody>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Libellé</th>
+      <th scope="col">Detail</th>
+    </tr>
+  </thead>
+  <?php
+  while ($genre = $genres->fetch()) {
+    ?>
+    <tbody>
       <tr>
-        <td>' . $genre['libelle'] . '</td>
-        <td><a href ="index.php?action=detailGenre&id=' . $genre['id_genre'] . '">Details</a></td>
-      </tr>';
-}
-echo '</tbody>
-  </table>';
-?>
- <a href="#" class="go_top">
-        <i class="fa-solid fa-arrow-up"></i>
-    </a>
+        <td>
+          <?= $genre['libelle'] ?>
+        </td>
+        <td><a href="index.php?action=detailGenre&id=<?= $genre['id_genre'] ?>">Details</a></td>
+      </tr>
+      <?php
+  }
+  ?>
+  </tbody>
+</table>
+<a href="#" class="go_top">
+  <i class="fa-solid fa-arrow-up"></i>
+</a>
 <?php
 $title = "Liste Des Genres";
 $contenu = ob_get_clean(); //temporisation de sortie
