@@ -1,34 +1,44 @@
 <?php ob_start();
 $acteur = $acteur->fetch();
 ?>
-<?php echo '<h1>' . $acteur['nom_acteur'] . '</h1>' ?>
+<h1>
+  <?= $acteur['nom_acteur'] ?>
+</h1>
 
-<?php
-
-echo
-'<div class="container text-center">
+<div class="container text-center">
   <div class="row">
-    <div class="col"><img src="' . $acteur['img'] . '" class="img-fluid"></div>
+    <div class="col"><img src="<?= $acteur['img'] ?>" class="img-fluid"></div>
     <div class="col">
-    <div>' . 'Date de naissance : ' . ' ' . $acteur['date_naissance'] . '</div>
-    <div>' . 'Nationalité : ' . '' . $acteur['nationalite'] . '</div>
+      <div> Date de naissance :
+        <?= $acteur['date_naissance'] ?>
+      </div>
+      <div>Nationalité :
+        <?= $acteur['nationalite'] ?>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <section>
+        <?php
+        foreach ($casting as $casting) {
+          ?>
+          <div>Rôle :
+            <?= $casting['nom_role'] ?>
+          </div>
+          <?php
+        }
+        foreach ($film as $film) {
+          ?>
+          <div> Dans le Film : <a href="index.php?action=detailFilm&id=<?= $film['id_film'] ?>"><?= $film['titre'] ?></a>
+          </div>
+          <?php
+        }
+        ?>
+      </section>
+    </div>
   </div>
 </div>
-<div class="row">
-  <div class="col">
-    <section>';
-    foreach ($casting as $casting) {
-      echo '<div>' .'Rôle :'.' ' .$casting['nom_role'] . '</div>';
-    }
-    foreach ($film as $film) {
-      echo '<div>' . 'Dans le Film : <a href ="index.php?action=detailFilm&id=' . $film['id_film'] . '">' . $film['titre'] . '</a></div>';
-    }
-    echo 
-    '</section>
-  </div>
-</div>
-</div>';
-?>
 
 <?php
 $title = $acteur['nom_acteur'];
