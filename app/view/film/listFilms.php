@@ -1,8 +1,8 @@
 <?php ob_start()
   ?>
 
-<h1>Bienvenue sur ma page de Film</h1>
-
+<h1>Bienvenue sur ma page de Film</h1><br>
+<h2>Vous avez <?=$films->rowCount()?> films</h2> 
 <?php
 echo '<table class="table">
     <thead>
