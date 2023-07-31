@@ -1,30 +1,36 @@
 <?php ob_start();
 $genre = $genre->fetch();
 ?>
-<?php echo '<h1>' . $genre['libelle'] . '</h1>' ?>
+<h1>
+  <?= $genre['libelle'] ?>
+</h1>
 
-<?php
-
-echo
-  '<div class="container text-center">
+<div class="container text-center">
   <div class="row">
     <div class="col">
-    <div>' . 'Genre : ' . '' . $genre['libelle'] . '</div>
+      <div>Genre :
+        <?= $genre['libelle'] ?>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <section>
+        <div>
+          <h2>Liste du/des Films</h2>
+        </div>
+        <?php
+        foreach ($film as $film) {
+          ?>
+          <div><a href="index.php?action=detailFilm&id=<?= $film['id_film'] ?>"><?= $film['titre'] ?></a></div>
+          <?php
+        }
+        ?>
+      </section>
+    </div>
   </div>
 </div>
-<div class="row">
-  <div class="col">
-    <section>
-    <div><h2>Liste du/des Films</h2></div>';
-foreach ($film as $film) {
-  echo '<div><a href ="index.php?action=detailFilm&id=' . $film['id_film'] . '">' . $film['titre'] . '</a></div>';
-}
-echo
-  '</section>
-  </div>
-</div>
-</div>';
-?>
+
 <?php
 $title = $genre['libelle'];
 $contenu = ob_get_clean(); //temporisation de sortie
