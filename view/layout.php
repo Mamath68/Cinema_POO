@@ -56,18 +56,18 @@
     <footer class="text-center text-white" style="background-color: #f1f1f1;">
         <div class="container pt-4">
             <section class="mb-4">
-                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.facebook.com/" role="button" data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.facebook.com/" target="_blank" role="button" data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a>
 
                 <!-- Twitter -->
-                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://twitter.com/home?lang=fr" role="button" data-mdb-ripple-color="dark"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://twitter.com/home?lang=fr" target="_blank" role="button" data-mdb-ripple-color="dark"><i class="fab fa-twitter"></i></a>
 
                 <!-- Instagram -->
-                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.instagram.com/" role="button" data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i></a>
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.instagram.com/" target="_blank" role="button" data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i></a>
 
                 <!-- Linkedin -->
-                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.linkedin.com/feed/" role="button" data-mdb-ripple-color="dark"><i class="fab fa-linkedin"></i></a>
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.linkedin.com/feed/" target="_blank" role="button" data-mdb-ripple-color="dark"><i class="fab fa-linkedin"></i></a>
                 <!-- Github -->
-                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://github.com/Mamath68/" role="button" data-mdb-ripple-color="dark"><i class="fab fa-github"></i></a>
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://github.com/Mamath68/" target="_blank" role="button" data-mdb-ripple-color="dark"><i class="fab fa-github"></i></a>
             </section>
         </div>
 
