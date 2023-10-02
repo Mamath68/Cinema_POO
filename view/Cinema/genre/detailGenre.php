@@ -1,33 +1,32 @@
 <?php
-$genre = $genre->fetch();
+$genre = $result['data']['genres'];
+$films = $result['data']['films'];
 ?>
-<h1><?= $genre['libelle'] ?></h1>
+<h1><?= $genre->getLibelle() ?></h1>
 
-<div class="container text-center">
-  <div class="row">
-    <div class="col">
-      <div>Genre : <?= $genre['libelle'] ?></div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <section>
-        <div>
-          <h2>Liste du/des Films</h2>
-        </div>
-        <?php
-        foreach ($film as $film) {
-        ?>
-          <div>
-            <a href="index.php?action=detailFilm&id=<?= $film['id_film'] ?>"><?= $film['titre'] ?></a>
-          </div>
-        <?php
-        }
-        ?>
-      </section>
-    </div>
-  </div>
-</div>
+
+<table class="table text-center">
+  <thead>
+    <tr>
+      <th scope="col">Titre</th>
+      <th scope="col">Affiche</th>
+      <th scope="col">Details</th>
+    </tr>
+  </thead>
+  <?php
+  foreach ($films as $film) {
+  ?>
+    <tbody>
+      <tr>
+        <td><?= $film->getTitre() ?></td>
+        <td><img src="<?= $film->getImage() ?>" class="img-fluid"></td>
+        <td><a href="index.php?ctrl=film&action=detailFilm&id=<?= $film->getId() ?>">Details</a></td>
+      </tr>
+    <?php
+  }
+    ?>
+    </tbody>
+</table>
 
 <?php
-$title = $genre['libelle'];
+$title = $genre->getLibelle();

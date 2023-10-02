@@ -48,6 +48,9 @@
     </header>
     <main>
         <?= $contenu ?>
+        <a href="#" class="go_top">
+            <i class="fa-solid fa-arrow-up"></i>
+        </a>
     </main>
 
     <footer class="text-center text-white" style="background-color: #f1f1f1;">

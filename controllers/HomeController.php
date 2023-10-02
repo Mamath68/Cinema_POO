@@ -20,18 +20,4 @@ class HomeController extends AbstractController implements ControllerInterface
             "view" => VIEW_DIR . "home.php",
         ];
     }
-
-    public function mentions()
-    {
-        return [
-            "view" => VIEW_DIR . "home/mentions_legal.php"
-        ];
-    }
-
-    public function conditions()
-    {
-        return [
-            "view" => VIEW_DIR . "home/conditions.php"
-        ];
-    }
 }

@@ -31,19 +31,4 @@ class GenreManager extends Manager
             $this->className
         );
     }
-    public function findMovieByGenre($id)
-    {
-        $sql = "SELECT f.id_film, f.titre ,g.id_genre, g.libelle
-        FROM " . $this->tableName . " g
-        INNER JOIN liengenrefilm lgf
-        ON g.id_genre = lgf.genre_id
-        INNER JOIN film f
-        ON f.id_film = lgf.film_id
-        Where g.id_genre = :id";
-
-        return $this->getMultipleResults(
-            DAO::select($sql, ['id' => $id], true),
-            $this->className
-        );
-    }
 }

@@ -1,27 +1,29 @@
 <?php
-$acteur = $acteur->fetch();
+$acteur = $result['data']['acteur'];
+$roles = $result['data']['roles'];
+$films = $result['data']['films'];
 ?>
-<h1><?= $acteur['nom_acteur'] ?></h1>
+<h1><?= $acteur->getActeur() ?></h1>
 
 
 <div class="container text-center">
   <div class="row">
-    <div class="col"><img src="<?= $acteur['img'] ?>" class="img-fluid"></div>
+    <div class="col"><img src="<?= $acteur->getImg() ?>" class="img-fluid"></div>
     <div class="col">
-      <div>'Date de naissance : <?= $acteur['date_naissance'] ?></div>
-      <div>Nationalité : <?= $acteur['nationalite'] ?></div>
+      <div>Date de naissance : <?= $acteur->getDateNaissance() ?></div>
+      <div>Nationalité : <?= $acteur->getNationalite() ?></div>
     </div>
   </div>
   <div class="row">
     <div class="col">
       <section>
         <?php
-        foreach ($casting as $casting) { ?>
-          <div>Rôle :<?= $casting['nom_role'] ?></div>
+        foreach ($roles as $role) { ?>
+          <div>Rôle :<?= $role->getRole() ?>
         <?php
         }
-        foreach ($film as $film) { ?>
-          <div>Dans le Film : <a href="index.php?action=detailFilm&id=<?= $film['id_film'] ?>"><?= $film['titre'] ?></a></div>
+        foreach ($films as $film) { ?>
+          Dans le Film : <a href="index.php?ctrl=film&action=detailFilm&id=<?= $film->getId() ?>"><?= $film->getTitre() ?></a></div>
         <?php
         } ?>
 
@@ -31,4 +33,4 @@ $acteur = $acteur->fetch();
 </div>
 
 <?php
-$title = $acteur['nom_acteur'];
+$title = $acteur->getActeur();

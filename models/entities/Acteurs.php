@@ -12,7 +12,6 @@ final class Acteurs extends Entity
     private $sexe;
     private $img;
     private \DateTime $dateNaissance;
-    private \DateTime $dateDeces;
     private $nationalite;
 
     public function __construct($data)
@@ -35,19 +34,9 @@ final class Acteurs extends Entity
         return $this->dateNaissance->format("d/m/Y");
     }
 
-    public function setDateNaissance()
+    public function setDateNaissance($dateNaissance)
     {
-        $this->dateNaissance = new \DateTime;
-        return $this;
-    }
-    public function getDateDeces()
-    {
-        return $this->dateDeces->format("d/m/Y");
-    }
-
-    public function setDateDeces()
-    {
-        $this->dateDeces = new \DateTime;
+        $this->dateNaissance = new \DateTime($dateNaissance);
         return $this;
     }
 
@@ -93,6 +82,6 @@ final class Acteurs extends Entity
 
     public function __toString()
     {
-        return $this->getId() . " " . $this->getDateNaissance() . " " . $this->getDateDeces() . " " . $this->getActeur() . " " . $this->getSexe() . " " . $this->getImg() . " " . $this->getNationalite();
+        return $this->getId() . " " . $this->getDateNaissance() . " " . $this->getActeur() . " " . $this->getSexe() . " " . $this->getImg() . " " . $this->getNationalite();
     }
 }

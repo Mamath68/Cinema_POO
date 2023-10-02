@@ -59,6 +59,20 @@ class FilmController extends AbstractController implements ControllerInterface
             ];
     }
     //fonction pour gérer le traitement de la requête d'ajout de film 
+
+    public function addFilmForm()
+    {
+        $realisateur = new RealisateurManager();
+        return
+            [
+                "view" => VIEW_DIR . "cinema/addFilm.php",
+                "data" =>
+                [
+                    "realisateurs" => $realisateur->findAll(),
+                ]
+            ];
+    }
+
     public function addFilm()
     {
         if (isset($_POST)) {
@@ -94,34 +108,22 @@ class FilmController extends AbstractController implements ControllerInterface
                             "film" => $film,
                         ]
                     ];
-            } 
-                
-                $filmManager = new FilmManager();
-                $realisateur = new RealisateurManager();
-                return
-                    [
-                        "view" => VIEW_DIR . "cinema/addFilm.php",
-                        "data" =>
-                        [
-                            "RendezVous" => $filmManager,
-                            "realisateur" => $realisateur->findAll(),
-                        ]
-                    ];
             }
+
+            $filmManager = new FilmManager();
+            $realisateur = new RealisateurManager();
+            return
+                [
+                    "view" => VIEW_DIR . "cinema/addFilm.php",
+                    "data" =>
+                    [
+                        "RendezVous" => $filmManager,
+                        "realisateur" => $realisateur->findAll(),
+                    ]
+                ];
+        }
     }
 
-    public function addFilmForm()
-    {
-        $realisateur = new RealisateurManager();
-        return
-            [
-                "view" => VIEW_DIR . "cinema/addFilm.php",
-                "data" =>
-                [
-                    "realisateurs" => $realisateur->findAll(),
-                ]
-            ];
-    }
     public function addReal()
     {
         // $dao = new DAO();

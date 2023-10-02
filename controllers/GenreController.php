@@ -9,9 +9,8 @@ use Core\Session;
 use Core\AbstractController;
 // fait appel a ControllerInterface dans le namespace Core
 use Core\ControllerInterface;
-// use Models\Managers\FilmManager;
+use Models\Managers\FilmManager;
 use Models\Managers\GenreManager;
-// use Models\Managers\RealisateurManager;
 
 // class HomeController hérite de la classe AbstractController et implémente ControllerInterface.
 class GenreController extends AbstractController implements ControllerInterface
@@ -31,16 +30,18 @@ class GenreController extends AbstractController implements ControllerInterface
             ];
     }
 
-    public function findMovieById($id)
+    public function detailGenre($id)
     {
         $genreManager = new GenreManager();
+        $filmManager = new FilmManager();
 
         return
             [
                 "view" => VIEW_DIR . "Cinema/genre/detailGenre.php",
                 "data" =>
                 [
-                    "genre" => $genreManager->findMovieByGenre($id),
+                    "genres" => $genreManager->findOneById($id),
+                    "films" => $filmManager->findMovieByGenre($id),
                 ]
             ];
     }

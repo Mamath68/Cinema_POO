@@ -18,16 +18,14 @@ $acteurs = $result['data']['acteurs'];
       <tr>
         <td colspan="2"><?= $acteur->getActeur()  ?></td>
         <td><img src="<?= $acteur->getImg() ?>" class="img-fluid"></td>
-        <td><a href="index.php?action=detailActeur&id=<?= $acteur->getId() ?>">Details</a></td>
+        <td><a href="index.php?ctrl=acteur&action=detailActeur&id=<?= $acteur->getId() ?>">Details</a></td>
       </tr>
     <?php
   }
     ?>
     </tbody>
 </table>
-<a href="#" class="go_top">
-  <i class="fa-solid fa-arrow-up"></i>
-</a>
+
 <?php
 
 $title = "Liste Des Acteurs";

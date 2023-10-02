@@ -18,7 +18,7 @@ $realisateurs = $result['data']['realisateur'];
       <tr>
         <td colspan="2"><?= $realisateur->getRealisateur() ?> </td>
         <td><img src="<?= $realisateur->getImg() ?> " class="img-fluid"></td>
-        <td><a href="index.php?ctrl=realisateur&action=findMovieByRealisateur&id=<?= $realisateur->getId() ?>">Details</a></td>
+        <td><a href="index.php?ctrl=realisateur&action=detailRealisateur&id=<?= $realisateur->getId() ?>">Details</a></td>
       </tr>
     <?php
   }
@@ -26,9 +26,6 @@ $realisateurs = $result['data']['realisateur'];
     </tbody>
 </table>
 
-<a href="#" class="go_top">
-  <i class="fa-solid fa-arrow-up"></i>
-</a>
 <?php
 
 $title = "Liste Des Réalisateur";

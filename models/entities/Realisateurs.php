@@ -4,6 +4,7 @@ namespace Models\Entities;
 
 use Core\Entity;
 use DateTime;
+use DateTimeImmutable;
 
 final class Realisateurs extends Entity
 {
@@ -13,7 +14,6 @@ final class Realisateurs extends Entity
     private $img;
     private $sexe;
     private DateTime $dateNaissance;
-    private DateTime $dateMort;
     private $Nationalite;
 
     public function __construct($data)
@@ -36,20 +36,9 @@ final class Realisateurs extends Entity
         return $this->dateNaissance->format("d/m/Y");
     }
 
-    public function setDateNaissance()
+    public function setDateNaissance($dateNaissance)
     {
-        $this->dateNaissance = new DateTime() ;
-
-    }
-
-    public function getDateMort()
-    {
-        return $this->dateMort->format("d/m/Y");
-    }
-
-    public function setDateMort()
-    {
-        $this->dateMort = new DateTime();
+        $this->dateNaissance = new DateTime($dateNaissance) ;
     }
 
     public function getRealisateur()
@@ -96,7 +85,7 @@ final class Realisateurs extends Entity
 
     public function __toString()
     {
-        return $this->getId() . " " . $this->getDateNaissance() . " " . $this->getDateMort() . " " . $this->getRealisateur() . " " . $this->getImg() . " " . $this->getSexe() . " " . $this->getNationalite();
+        return $this->getId() . " " . $this->getDateNaissance() . " " . $this->getRealisateur() . " " . $this->getImg() . " " . $this->getSexe() . " " . $this->getNationalite();
     }
 
     /**

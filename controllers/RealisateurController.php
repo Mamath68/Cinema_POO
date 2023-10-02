@@ -31,7 +31,7 @@ class RealisateurController extends AbstractController implements ControllerInte
             ];
     }
 
-    public function findMovieByRealisateur($id){
+    public function detailRealisateur($id){
         $realisateurManager = new RealisateurManager();
         $filmManager = new FilmManager();
 

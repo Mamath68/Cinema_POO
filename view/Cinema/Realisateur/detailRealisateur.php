@@ -5,7 +5,7 @@ $films = $result['data']['films'];
 ?>
 
 <h1>
-  <?= $realisateurs->getPrenom() . " " . $realisateurs->getNom() ?>
+  <?= $realisateurs->getRealisateur() ?>
 </h1>
 
 
@@ -14,13 +14,6 @@ $films = $result['data']['films'];
     <div class="col"><img src="<?= $realisateurs->getImg() ?>" class="img-fluid"></div>
     <div class="col">
       <div>Date de naissance : <?= $realisateurs->getDateNaissance() ?></div>
-      <?php
-      if ($realisateurs->getDateMort()) {
-      ?>
-        <div>Date de Décès : <?= $realisateurs->getDateMort() ?></div>
-      <?php
-      }
-      ?>
       <div>Nationalité : <?= $realisateurs->getNationalite() ?></div>
     </div>
   </div>
@@ -48,4 +41,4 @@ $films = $result['data']['films'];
   </div>
 </div>
 <?php
-$title = $realisateurs->getPrenom() . " " . $realisateurs->getNom();
+$title = $realisateurs->getRealisateur();
