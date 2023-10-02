@@ -18,7 +18,7 @@ class RoleManager extends Manager
 
     public function findRoleByMovie($id)
     {
-        $sql = "SELECT f.id_film, f.titre, r.id_role, r.prenom, r.nom
+        $sql = "SELECT f.id_film, f.titre, r.id_role, r.role
             FROM " . $this->tableName . " r
             INNER JOIN casting c
             ON r.id_role = c.role_id

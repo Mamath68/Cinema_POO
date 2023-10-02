@@ -8,8 +8,7 @@ final class Roles extends Entity
 {
 
     private $id;
-    private $prenom;
-    private $nom;
+    private $role;
 
     public function __construct($data)
     {
@@ -26,27 +25,19 @@ final class Roles extends Entity
         $this->id = $id;
     }
 
-    public function getPrenom()
+    public function getRole()
     {
-        return $this->prenom;
+        return $this->role;
     }
 
-    public function setPrenom($prenom)
+    public function setRole($role)
     {
-        $this->prenom = ucfirst($prenom);
+        $this->role = ucfirst($role);
     }
-    public function getNom()
-    {
-        return $this->nom;
-    }
-
-    public function setNom($nom)
-    {
-        $this->nom = ucfirst($nom);
-    }
+    
 
     public function __toString()
     {
-        return $this->getId() . " " . $this->getPrenom() . " " . $this->getNom();
+        return $this->getId() . " " . $this->getRole();
     }
 }

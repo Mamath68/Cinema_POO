@@ -8,8 +8,7 @@ final class Acteurs extends Entity
 {
 
     private $id;
-    private $firstname;
-    private $name;
+    private $acteur;
     private $sexe;
     private $img;
     private \DateTime $dateNaissance;
@@ -52,24 +51,14 @@ final class Acteurs extends Entity
         return $this;
     }
 
-    public function getFirstname()
+    public function getActeur()
     {
-        return $this->firstname;
+        return $this->acteur;
     }
 
-    public function setFirstname($firstname)
+    public function setActeur($acteur)
     {
-        $this->firstname = $firstname;
-    }
-
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    public function setName($name)
-    {
-        $this->name = $name;
+        $this->acteur = $acteur;
     }
 
     public function getSexe()
@@ -104,6 +93,6 @@ final class Acteurs extends Entity
 
     public function __toString()
     {
-        return $this->getId() . " " . $this->getDateNaissance() . " " . $this->getDateDeces() . " " . $this->getFirstname() . " " . $this->getName() . " " . $this->getSexe() . " " . $this->getImg() . " " . $this->getNationalite();
+        return $this->getId() . " " . $this->getDateNaissance() . " " . $this->getDateDeces() . " " . $this->getActeur() . " " . $this->getSexe() . " " . $this->getImg() . " " . $this->getNationalite();
     }
 }

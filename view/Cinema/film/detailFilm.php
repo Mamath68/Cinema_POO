@@ -17,19 +17,19 @@ $acteurs = $result['data']['acteur'];
         Sortis le : <?= $film->getDateSortie() ?> / Durée : <?= $film->getDuree() ?>
       </div>
       <div>
-        Un film De : <a href="index.php?ctrl=realisateur&action=findMovieByRealisateur&id=<?= $film->getRealisateur()->getId() ?>"><?= $film->getRealisateur()->getPrenom() . " " . $film->getRealisateur()->getNom() ?></a>
+        Un film De : <a href="index.php?ctrl=realisateur&action=findMovieByRealisateur&id=<?= $film->getRealisateur()->getId() ?>"><?= $film->getRealisateur()->getRealisateur() ?></a>
       </div>
       <div>
         Note : <?= str_replace(".", ",", $film->getNote()) ?>/5
         <?php
         foreach ($acteurs as $acteur) {
         ?>
-          <div>Avec : <a href="index.php?ctrl=acteur&action=detailActeur&id=<?= $acteur->getId() ?>"><?= $acteur->getFirstname() . " " . $acteur->getName() ?></a> <br>
+          <div>Avec : <a href="index.php?ctrl=acteur&action=detailActeur&id=<?= $acteur->getId() ?>"><?= $acteur->getActeur() ?></a> <br>
           <?php
         }
         foreach ($roles as $role) {
           ?>
-            Dans le Role de <?= $role->getPrenom() . " " . $role->getNom() ?>
+            Dans le Role de <?= $role->getRole() ?>
           </div>
         <?php
         }

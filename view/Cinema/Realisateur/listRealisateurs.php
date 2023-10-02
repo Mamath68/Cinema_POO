@@ -6,7 +6,7 @@ $realisateurs = $result['data']['realisateur'];
 <table class="table text-center">
   <thead>
     <tr>
-      <th colspan="2">Prenom Nom</th>
+      <th colspan="2">Réalisateur</th>
       <th scope="col">Images</th>
       <th scope="col">Details</th>
     </tr>
@@ -16,7 +16,7 @@ $realisateurs = $result['data']['realisateur'];
   ?>
     <tbody>
       <tr>
-        <td colspan="2"><?= $realisateur->getPrenom() . " " . $realisateur->getNom() ?> </td>
+        <td colspan="2"><?= $realisateur->getRealisateur() ?> </td>
         <td><img src="<?= $realisateur->getImg() ?> " class="img-fluid"></td>
         <td><a href="index.php?ctrl=realisateur&action=findMovieByRealisateur&id=<?= $realisateur->getId() ?>">Details</a></td>
       </tr>

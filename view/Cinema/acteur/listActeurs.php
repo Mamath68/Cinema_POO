@@ -6,7 +6,7 @@ $acteurs = $result['data']['acteurs'];
 <table class="table text-center">
   <thead>
     <tr>
-      <th colspan="2">Prenom Nom</th>
+      <th colspan="2">Acteur</th>
       <th scope="col">Image</th>
       <th scope="col">Details</th>
     </tr>
@@ -16,7 +16,7 @@ $acteurs = $result['data']['acteurs'];
   ?>
     <tbody>
       <tr>
-        <td colspan="2"><?= $acteur->getPrenom() . " " . $acteur->getNom()  ?></td>
+        <td colspan="2"><?= $acteur->getActeur()  ?></td>
         <td><img src="<?= $acteur->getImg() ?>" class="img-fluid"></td>
         <td><a href="index.php?action=detailActeur&id=<?= $acteur->getId() ?>">Details</a></td>
       </tr>

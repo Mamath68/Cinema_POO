@@ -9,8 +9,7 @@ final class Realisateurs extends Entity
 {
 
     private $id;
-    private $prenom;
-    private $nom;
+    private $realisateur;
     private $img;
     private $sexe;
     private DateTime $dateNaissance;
@@ -53,26 +52,16 @@ final class Realisateurs extends Entity
         $this->dateMort = new DateTime();
     }
 
-    public function getPrenom()
+    public function getRealisateur()
     {
-        return $this->prenom;
+        return $this->realisateur;
     }
 
-    public function setPrenom($prenom)
+    public function setRealisateur($realisateur)
     {
-        $this->prenom = $prenom;
+        $this->realisateur = $realisateur;
 
         return $this;
-    }
-
-    public function getNom()
-    {
-        return $this->nom;
-    }
-
-    public function setNom($nom)
-    {
-        $this->nom = $nom;
     }
 
     public function getImg()
@@ -107,7 +96,7 @@ final class Realisateurs extends Entity
 
     public function __toString()
     {
-        return $this->getId() . " " . $this->getDateNaissance() . " " . $this->getDateMort() . " " . $this->getPrenom() . " " . $this->getNom() . " " . $this->getImg() . " " . $this->getSexe() . " " . $this->getNationalite();
+        return $this->getId() . " " . $this->getDateNaissance() . " " . $this->getDateMort() . " " . $this->getRealisateur() . " " . $this->getImg() . " " . $this->getSexe() . " " . $this->getNationalite();
     }
 
     /**

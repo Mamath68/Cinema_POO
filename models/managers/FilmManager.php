@@ -18,7 +18,7 @@ class FilmManager extends Manager
 
     public function findDetailMovie($id)
     {
-        $sql = "SELECT f.id_film, f.titre, f.image ,f.dateSortie, TIME_FORMAT(SEC_TO_TIME(f.duree*60),'%Hh%i') AS duree_du_film, f.synopsis, f.note, re.id_realisateur, re.prenom ,re.nom
+        $sql = "SELECT f.id_film, f.titre, f.image ,f.dateSortie, TIME_FORMAT(SEC_TO_TIME(f.duree*60),'%Hh%i') AS duree_du_film, f.synopsis, f.note, re.id_realisateur, re.realisateur
         FROM " . $this->tableName . " f
         INNER JOIN realisateur re
         ON re.id_realisateur = f.realisateur_id

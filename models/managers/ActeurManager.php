@@ -18,7 +18,7 @@ class ActeurManager extends Manager
 
     public function findActeurByMovie($id)
     {
-        $sql = "SELECT f.id_film, f.titre, a.id_acteur, a.firstname, a.name
+        $sql = "SELECT f.id_film, f.titre, a.id_acteur, a.acteur
             FROM " . $this->tableName . " a   
             INNER JOIN casting c
             ON c.acteur_id = a.id_acteur
